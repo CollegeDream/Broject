@@ -1,16 +1,27 @@
 import { RootState } from '../../redux/store';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Button, Alert, StyleSheet, AppState, Text } from 'react-native';
-import { useDispatch, useSelector} from 'react-redux';
-import { login } from './authSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, loginPost } from './authSlice';
+import { useAppDispatch } from '../../hooks/hook';
 
 const LoginScreen = () => {
 
-    const dispatch = useDispatch()
-    const token = useSelector((state:RootState)=>state.auth.token)
+  const dispatch = useAppDispatch()
+  const token = useSelector((state: RootState) => state.auth.token)
+
+  // useEffect(() => {
+  //   dispatch(loginPost({
+  //     username: "test",
+  //     password: "1234"
+  //   }))
+  // }, []);
 
   const handlePress = () => {
-    dispatch(login("abcd"))
+    dispatch(loginPost({
+      username: "tienloc",
+      password: "12345678"
+    }));
     Alert.alert('Button Pressed!', 'You have pressed the button.');
   };
 
