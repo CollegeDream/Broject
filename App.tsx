@@ -10,8 +10,6 @@ import type { PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
@@ -20,44 +18,15 @@ import {
 
 import {
   Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import {store} from './src/redux/store';
 import LoginScreen from './src/features/Authentication/login';
+import Dashboard from './src/features/Dashboard/dashboard';
 
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
-
-function Section({ children, title }: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
 
 function AppWrapper(): React.JSX.Element {
   return (
@@ -75,8 +44,8 @@ function App(): React.JSX.Element {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <LoginScreen></LoginScreen>
-      <Text>Hello worlsa</Text>
+      {/* <LoginScreen></LoginScreen> */}
+      <Dashboard></Dashboard>
     </SafeAreaView>
   );
 }

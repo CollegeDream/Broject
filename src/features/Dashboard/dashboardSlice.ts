@@ -14,9 +14,7 @@ type User = {
     age: number
 }
 
-type fetchTop10UsersReponse = {
-    top10Users: Array<User>
-}
+type fetchTop10UsersReponse = Array<User>
 
 
 export const dashboardSlice = createSlice({
@@ -32,8 +30,9 @@ export const dashboardSlice = createSlice({
             Alert.alert('Pending!');
         });
         builder.addCase(fetchTop10Users.fulfilled, (state, action: PayloadAction<fetchTop10UsersReponse>) => {
-            state.top10Users = action.payload.top10Users;
-            Alert.alert('Fulfilled');
+            state.top10Users = action.payload;
+            
+            Alert.alert(action.payload[0].name);
         });
         builder.addCase(fetchTop10Users.rejected, (state, action) => {
             Alert.alert('Rejected');
@@ -41,14 +40,15 @@ export const dashboardSlice = createSlice({
     },
 })
 
-export const fetchTop10Users = createAsyncThunk<fetchTop10UsersReponse, number>(
+export const fetchTop10Users = createAsyncThunk<fetchTop10UsersReponse>(
     "dashboard/getTop10Users",
-    async(userId: number, thunkAPI) => {
+    async(thunkAPI) => {
         const response = await fetch(
-            `https://jsonplaceholder.typicode.com/todos/${userId}`
+            `https://d8f9-2601-646-9d84-7800-8457-f62f-2f94-a17a.ngrok-free.app/dashboard/fetchTop10Users`
         );
         const data = await response.json();
-        return data
+
+        return data;
     }
 )
 
