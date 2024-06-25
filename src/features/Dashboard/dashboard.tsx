@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Button, Alert, StyleSheet, AppState, Text } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import { fetchTop10Users } from './dashboardSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 

@@ -1,6 +1,7 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { UserCredentials } from "../../types";
 import { Alert } from "react-native";
+import axiosInstance from "../../axios";
 
 type DefaultState = {
     token: string,
@@ -18,26 +19,23 @@ export const loginPost = createAsyncThunk<LoginResponse, UserCredentials>(
     "auth/login",
     async (userCredentials: UserCredentials, thunkAPI) => {
         Alert.alert('Login Pressed!');
-        const response = await fetch(
-            `https://888f-2402-800-62a7-eaa9-a814-4ea2-97ef-13db.ngrok-free.app/auth/login`,
-            {
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                method: "POST",
-                body: JSON.stringify(userCredentials)
-            }
-        );
-
-
-        if (!response.ok) {
-            return thunkAPI.rejectWithValue('Failed to fetch token');
+        try {
+            const response = await axiosInstance.post(
+                "/auth/login",
+                JSON.stringify(userCredentials),
+                {
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                }
+            );
+            const data = response.data;
+            Alert.alert('Button Pressed!', data);
+            return data;
+        } catch (err) {
+            return thunkAPI.rejectWithValue(err);
         }
-
-        const data = await response.json();
-        Alert.alert('Button Pressed!', data);
-        return data;
     }
 );
 
