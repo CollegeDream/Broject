@@ -9,7 +9,12 @@ export const InputTextbox: FC<InputTextboxProps> = (props): JSX.Element => {
     return(
         <View className="pb-4">
             <Text className="mb-1 text-black font-medium">{props.label}</Text>
-            <TextInput secureTextEntry={true} className="border-black border-[1px] px-2"></TextInput>
+
+            {props.label !== 'Password' ? (
+                <TextInput className="border-black border-[1px] px-2"></TextInput>
+            ) : (
+                <TextInput secureTextEntry={true} className="border-black border-[1px] px-2"></TextInput>
+            )}
         </View>
     )
 }
