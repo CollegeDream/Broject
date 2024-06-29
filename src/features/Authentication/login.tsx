@@ -26,7 +26,7 @@ const LoginScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View className='flex-1 bg-black'> 
       <Text>{token}</Text>
       <Button
         title="Press Me"
@@ -37,12 +37,5 @@ const LoginScreen = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    height: 500,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default LoginScreen;

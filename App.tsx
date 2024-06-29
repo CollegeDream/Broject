@@ -40,12 +40,13 @@ function App(): React.JSX.Element {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    flex: 1
   };
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      {/* <LoginScreen></LoginScreen> */}
-      <Dashboard></Dashboard>
+      <LoginScreen></LoginScreen>
+      {/* <Dashboard></Dashboard> */}
     </SafeAreaView>
   );
 }
