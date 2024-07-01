@@ -5,7 +5,7 @@ interface InputTextboxProps {
     label: string
 }
 
-export const InputTextbox: FC<InputTextboxProps> = (props): JSX.Element => {
+export const CustomInputTextbox: FC<InputTextboxProps> = (props): JSX.Element => {
     return(
         <View className="pb-4">
             <Text className="mb-1 text-black font-medium">{props.label}</Text>

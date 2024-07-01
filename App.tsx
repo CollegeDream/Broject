@@ -22,6 +22,7 @@ import {
 import {store} from './src/redux/store';
 import LoginScreen from './src/features/Authentication/login';
 import Dashboard from './src/features/Dashboard/dashboard';
+import HomeScreen from './src/features/Homescreen/homescreen';
 
 
 type SectionProps = PropsWithChildren<{
@@ -45,7 +46,7 @@ function App(): React.JSX.Element {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <LoginScreen></LoginScreen>
+      <HomeScreen></HomeScreen>
       {/* <Dashboard></Dashboard> */}
     </SafeAreaView>
   );

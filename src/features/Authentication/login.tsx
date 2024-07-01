@@ -4,7 +4,7 @@ import { View, Button, Alert, StyleSheet, AppState, Text, TouchableOpacity } fro
 import { useDispatch, useSelector } from 'react-redux';
 import { login, loginPost } from './authSlice';
 import { useAppDispatch } from '../../hooks/hook';
-import { InputTextbox } from '../../components/InputTextbox';
+import { CustomInputTextbox } from '../../components/InputTextbox';
 import CheckBox from '@react-native-community/checkbox';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
@@ -42,8 +42,8 @@ const LoginScreen = () => {
         
         {/* section 2 */}
         <View>
-          <InputTextbox label={"Email Address"}></InputTextbox>
-          <InputTextbox label={"Password"}></InputTextbox>
+          <CustomInputTextbox label={"Email Address"}></CustomInputTextbox>
+          <CustomInputTextbox label={"Password"}></CustomInputTextbox>
         </View>
 
         {/* section 3 */}
@@ -64,7 +64,7 @@ const LoginScreen = () => {
 
         {/* section 4 */}
         <View className='mt-14'>
-          <TouchableOpacity className='bg-black p-3.5'>
+          <TouchableOpacity className='bg-black p-3.5'>x
             <Text className='text-center text-white uppercase'>Login</Text>
           </TouchableOpacity>
         </View>
