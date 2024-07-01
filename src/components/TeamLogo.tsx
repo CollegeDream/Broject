@@ -20,7 +20,7 @@ export const CustomTeamLogo: FC<TeamLogoProps> = (props): JSX.Element => {
         </View>)
     } else {
         return (
-            <View className="items-center w-1/3">
+            <View className="items-center w-1/3 ">
                 <Image className={`${props.style} aspect-square`}
                     source={{
                         uri: props.imageURL,
