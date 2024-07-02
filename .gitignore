@@ -78,3 +78,4 @@ yarn-error.log
 .bundle/
 android/
 ios/
+android/gradle/wrapper/gradle-wrapper.properties
