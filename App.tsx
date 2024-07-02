@@ -23,7 +23,8 @@ import {store} from './src/redux/store';
 import LoginScreen from './src/features/Authentication/login';
 import Dashboard from './src/features/Dashboard/dashboard';
 import HomeScreen from './src/features/Homescreen/homescreen';
-import { CareerStatsScreen } from './src/features/CareerStats';
+import CareerStatsScreen  from './src/features/CareerStats';
+import ClubSearchScreen from './src/features/ClubSearch';
 
 
 type SectionProps = PropsWithChildren<{
@@ -48,7 +49,8 @@ function App(): React.JSX.Element {
   return (
     <SafeAreaView style={backgroundStyle}>
       {/* <HomeScreen></HomeScreen> */}
-      <CareerStatsScreen></CareerStatsScreen>
+      <ClubSearchScreen></ClubSearchScreen>
+      {/* <CareerStatsScreen></CareerStatsScreen> */}
       {/* <Dashboard></Dashboard> */}
     </SafeAreaView>
   );

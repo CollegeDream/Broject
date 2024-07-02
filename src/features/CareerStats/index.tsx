@@ -3,7 +3,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { CustomTeamLogo } from "../../components/TeamLogo";
 import { CustomStatsCard } from "./components/StatsCard";
 
-export const CareerStatsScreen = () => {
+const CareerStatsScreen = () => {
     return (
         // Parent View 
         <View className="flex-1 justify-between items-center">
@@ -93,3 +93,5 @@ export const CareerStatsScreen = () => {
         </View>
     )
 }
+
+export default CareerStatsScreen
