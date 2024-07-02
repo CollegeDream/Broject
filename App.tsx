@@ -24,7 +24,7 @@ import LoginScreen from './src/features/Authentication/login';
 import Dashboard from './src/features/Dashboard/dashboard';
 import HomeScreen from './src/features/Homescreen/homescreen';
 import CareerStatsScreen  from './src/features/CareerStats';
-import ClubSearchScreen from './src/features/ClubSearch';
+import ClubSearchScreen from './src/features/ClubSearch/ClubSearch';
 
 
 type SectionProps = PropsWithChildren<{
